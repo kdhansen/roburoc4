@@ -1,0 +1,18 @@
+<package>
+  <name>roburoc4</name>
+  <version>1.1.0</version>
+  <description>
+    Provides controllers, state estimator, and drivers for the RobuROC4 four-wheeled robot. Originally developed at Aalborg University.
+  </description>
+  <maintainer email="kdh@es.aau.dk">Karl Damkjær Hansen</maintainer>
+  <license>GPLv3</license>
+  
+  <author>Rune Madsen</author>
+  <author>Niels Hyltoft Andersen</author>
+  <author>Karl Damkjær Hansen</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>aseta_bringup</run_depend>
+
+</package>

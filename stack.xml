@@ -1,8 +1,0 @@
-<stack>
-    <description brief="aseta_roburoc4">The aseta_roburoc4 stack holds code for interfacing to/controlling the Robosoft RobuROC4 robot.</description>
-    <author>Maintained by Karl Damkjær Hansen</author>
-    <license>All rights reserved</license>  
-    <review status="unreviewed" notes=""/>
-    <url>http://ros.org/wiki/aseta_roburoc4</url>
-    <depend stack="ros" />
-</stack>
