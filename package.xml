@@ -6,13 +6,22 @@
   </description>
   <maintainer email="kdh@es.aau.dk">Karl Damkjær Hansen</maintainer>
   <license>GPLv3</license>
-  
+
   <author>Rune Madsen</author>
   <author>Niels Hyltoft Andersen</author>
   <author>Karl Damkjær Hansen</author>
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>aseta_bringup</run_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>armadillo</build_depend>
 
+  <run_depend>roscpp</run_depend>
+  <run_depend>message_runtime</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>sensor_msgs</run_depend>
 </package>
