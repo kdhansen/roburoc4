@@ -4,7 +4,7 @@
 #include <boost/asio/ip/udp.hpp>
 #include <boost/asio.hpp>
 
-#include <pure_telegrams.hpp> 	// The communication protocol to the robot
+#include "pure_protocol/pure_telegrams.hpp" 	// The communication protocol to the robot
 
 #include <string>
 

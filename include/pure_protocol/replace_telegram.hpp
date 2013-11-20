@@ -1,7 +1,7 @@
 #ifndef REPLACE_TELEGRAM_HPP
 #define REPLACE_TELEGRAM_HPP
 
-#include <telegram.hpp>
+#include "pure_protocol/telegram.hpp"
 
 /*--------------------------------------------------------------------*/
 /* Localization Replace Telegram class */

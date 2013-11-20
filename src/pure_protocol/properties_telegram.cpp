@@ -1,4 +1,4 @@
-#include <properties_telegram.hpp>
+#include "pure_protocol/properties_telegram.hpp"
 
 /*--------------------------------------------------------------------*/
 /* General Request Properties Telegram Class */

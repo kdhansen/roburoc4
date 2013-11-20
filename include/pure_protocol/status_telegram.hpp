@@ -1,7 +1,7 @@
 #ifndef STATUS_TELEGRAM_HPP
 #define STATUS_TELEGRAM_HPP
 
-#include <telegram.hpp>
+#include "pure_protocol/telegram.hpp"
 
 /*--------------------------------------------------------------------*/
 /* Subscribe Telegram class */

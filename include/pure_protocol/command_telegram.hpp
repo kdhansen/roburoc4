@@ -1,7 +1,7 @@
 #ifndef COMMAND_TELEGRAM_HPP
 #define COMMAND_TELEGRAM_HPP
 
-#include <telegram.hpp>
+#include "pure_protocol/telegram.hpp"
 
 /*--------------------------------------------------------------------*/
 /* General Command Telegram class */

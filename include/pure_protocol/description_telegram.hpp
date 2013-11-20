@@ -1,7 +1,7 @@
 #ifndef DESCRIPTION_TELEGRAM_HPP
 #define DESCRIPTION_TELEGRAM_HPP
 
-#include <telegram.hpp>
+#include "pure_protocol/telegram.hpp"
 
 /*--------------------------------------------------------------------*/
 /* TODO: Implement all these */

@@ -1,7 +1,7 @@
 #ifndef PROPERTIES_TELEGRAM_HPP
 #define PROPERTIES_TELEGRAM_HPP
 
-#include <telegram.hpp>
+#include "pure_protocol/telegram.hpp"
 
 /*--------------------------------------------------------------------*/
 /* General Request Properties Telegram Class */
