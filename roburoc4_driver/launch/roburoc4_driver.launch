@@ -1,0 +1,6 @@
+<launch>
+	<!-- RobuROC4 driver node -->
+	<node name="roburoc4_driver" pkg="roburoc4_driver" type="roburoc4_driver_node" output="screen" />
+	<!-- <param name="/Roburoc4/server_address" value="127.0.0.1" /> -->
+	<param name="/Roburoc4/server_port" value="60000" />
+</launch>

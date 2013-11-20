@@ -1,0 +1,8 @@
+<launch>
+  <node name="mission_supervisor" pkg="mission_supervisor" type="mission_supervisor" output="screen">
+    <remap from="~/cmd_segment" to="/roburoc4_controllers/lineSegment" />
+    <remap from="/state_estimate" to="/roburoc4_state_estimator/states" />
+ 	<param name="new_segment_delay" value="3" />
+ 	<param name="goal_threshold" value="2" />
+  </node>
+</launch>

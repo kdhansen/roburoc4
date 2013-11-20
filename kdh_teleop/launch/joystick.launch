@@ -1,0 +1,10 @@
+<launch>
+  <node name="joy_node" pkg="joy" type="joy_node" />
+
+  <param name="/linearAxis" value="1" />
+  <param name="/angularAxis" value="0" />
+  <param name="/linearScale" value="0.5" />
+  <param name="/angularScale" value="1" />
+  <param name="/deadManButton" value="0" />
+  <node name="teleop_joy" pkg="kdh_teleop" type="teleop_joy" />
+</launch>

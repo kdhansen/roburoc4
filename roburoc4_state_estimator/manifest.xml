@@ -1,0 +1,17 @@
+<package>
+  <description brief="roburoc4_state_estimator">
+
+     roburoc4_state_estimator
+
+  </description>
+  <author>Karl Hansen</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/roburoc4_state_estimator</url>
+  <depend package="roscpp"/>
+  <depend package="aseta_sensors"/>
+  <depend package="roburoc4_driver"/>
+
+</package>
+
+

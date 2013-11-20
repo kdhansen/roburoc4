@@ -1,0 +1,22 @@
+<package>
+  <description brief="aseta_dataprocessing">
+
+     Package for post-processing of data from the runs of the RobuROC4.
+
+  </description>
+  <author>Karl Hansen</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/aseta_dataprocessing</url>
+  <depend package="roscpp"/>
+  <depend package="rosbag"/>
+  <depend package="sensor_msgs"/>
+  <depend package="opencv2"/>
+  <depend package="cv_bridge"/>
+  <depend package="std_msgs"/>
+  <depend package="image_transport"/>
+  <depend package="pcl"/>
+
+</package>
+
+

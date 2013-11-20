@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<launch>
+    <include file="$(find aseta_bringup)/launch/pmd.launch" />
+    <include file="$(find aseta_bringup)/launch/swissranger.launch" />
+    <include file="$(find aseta_bringup)/launch/pointgrey.launch" />
+    <node pkg="tf" type="static_transform_publisher" name="link_pointgrey_broadcaster" args="0 0 0 0 3.14 0 base PointGrey_frame 100" />
+    <node pkg="tf" type="static_transform_publisher" name="link_swissranger_broadcaster" args="0 0 0 0 3.14 0 base Swissranger_frame 100" />
+    <node pkg="tf" type="static_transform_publisher" name="link_pmd_broadcaster" args="0 0 0 0 0 0 base camboard_frame 100" />
+</launch>

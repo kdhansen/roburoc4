@@ -1,0 +1,7 @@
+<launch>
+	<!-- SETUP OF THE NODES AND CONFIGURATIONS -->
+	
+	<!-- Magnetometer Node -->
+	<node name="roburoc4_menu" pkg="roburoc4_menu" type="roburoc4_menu" output="screen" />
+
+</launch>

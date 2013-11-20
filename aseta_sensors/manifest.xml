@@ -1,0 +1,15 @@
+<package>
+  <description brief="roburoc4_sensors">
+
+     roburoc4_sensors
+
+  </description>
+  <author>Karl Hansen</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/roburoc4_sensors</url>
+  <depend package="roscpp"/>
+
+</package>
+
+

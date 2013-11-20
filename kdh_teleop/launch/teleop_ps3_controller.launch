@@ -1,0 +1,13 @@
+<launch>
+
+	<!-- Start the joy_node to connect to the ps3_controller ->
+	<node name="joy_node" pkg="joy" type="joy_node" />
+  
+	<!-- Make the configuration for the controller ->
+	<param name="/ps3_controller_node/controllerMode" value="1" />	# 1 = one stick mode, 2 =  two stick mode
+	<param name="/ps3_controller_node/deadManButton" value="13" />	# 12 = L2, 13 = R2
+  
+	<!-- Start the node -->
+	<node name="teleop_ps3_controller" pkg="kdh_teleop" type="teleop_ps3_controller" />
+	
+</launch>

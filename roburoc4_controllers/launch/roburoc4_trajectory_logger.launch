@@ -1,0 +1,10 @@
+<launch>
+	<!-- SETUP OF THE NODES AND CONFIGURATIONS -->
+	
+	<!-- The logger -->
+	<node name="roburoc4_trajectory_logger" pkg="roburoc4_controllers" type="roburoc4_trajectory_logger" output="screen" />
+	
+	<!-- Datafolder for the logger -->
+	<param name="/roburoc4_controllers/recorded_trajectories" value="$(find roburoc4_controllers)/recorded_trajecotries" />
+
+</launch>

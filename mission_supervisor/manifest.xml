@@ -1,0 +1,19 @@
+<package>
+  <description brief="mission_supervisor">
+
+     Supervisor for the controllers on the RobuROC4.
+
+  </description>
+  <author>Karl Damkjær Hansen</author>
+  <license>GPLv3</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/mission_supervisor</url>
+
+  <depend package="roscpp"/>
+  <depend package="roburoc4_controllers" />
+  <depend package="roburoc4_state_estimator"/>
+  <depend package="geometry_msgs"/>
+
+</package>
+
+
