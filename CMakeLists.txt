@@ -1,11 +1,12 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(roburoc4)
 
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Modules/")
 find_package(catkin REQUIRED roscpp message_generation geometry_msgs std_msgs sensor_msgs)
 find_package(Boost REQUIRED system filesystem serialization thread)
 find_package(Armadillo REQUIRED)
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Modules/")
 find_package (GeographicLib 1.9 REQUIRED)
+find_package (Curses REQUIRED)
 
 add_message_files(
   DIRECTORY msg
@@ -31,7 +32,8 @@ include_directories(
   ${Boost_INCLUDE_DIRS} 
   ${catkin_INCLUDE_DIRS}
   ${ARMADILLO_INCLUDE_DIRS}
-  ${GeographicLib_INCLUDE_DIRS})
+  ${GeographicLib_INCLUDE_DIRS}
+  ${Curses_INCLUDE_DIRS})
 
 ### Sensors ###
 add_executable(magnetometer_node src/magnetometerNode.cpp)
@@ -59,6 +61,7 @@ add_dependencies(roburoc4_driver_node ${PROJECT_NAME}_gencpp)
 ### State Estimator ###
 add_executable(roburoc4_state_estimator src/roburoc4_state_estimator.cpp)
 target_link_libraries(roburoc4_state_estimator ${catkin_LIBRARIES} ${GeographicLib_LIBRARIES} ${ARMADILLO_LIBRARIES})
+add_dependencies(roburoc4_state_estimator ${PROJECT_NAME}_gencpp)
 
 ### Controller related ###
 # Controller nodes
@@ -77,7 +80,11 @@ target_link_libraries(open_loop_playback ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 add_dependencies(roburoc4_trajectory_controller ${PROJECT_NAME}_gencpp)
 add_dependencies(roburoc4_trajectory_logger ${PROJECT_NAME}_gencpp)
 add_dependencies(roburoc4_helmsman_controller ${PROJECT_NAME}_gencpp)
+add_dependencies(circle_tool ${PROJECT_NAME}_gencpp)
 
+### Menu ###
+add_executable(roburoc4_menu src/roburoc4_menu.cpp)
+target_link_libraries(roburoc4_menu ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${Curses_LIBRARIES})
 
 ### Install ###
 install(DIRECTORY launch/

@@ -17,7 +17,7 @@
 #include <geometry_msgs/Twist.h>				// Message type to contain velocities
 #include <geometry_msgs/Pose2D.h>				// Message type to contain heading
 
-#include <roburoc4_state_estimator/States.h>	// Message type to contain the states of the system
+#include <roburoc4/States.h>	// Message type to contain the states of the system
 
 
 
@@ -27,7 +27,7 @@
 #include <menu.h>
 
 /* Defines for the controllers including the logger */
-#include <roburoc4_controllers/roburoc4_controllers.hpp>
+#include <roburoc4_controllers.hpp>
 
 #include <boost/thread.hpp>
 
@@ -103,7 +103,7 @@ class MenuNode {
 		void magnetometerHeadingCallback(const geometry_msgs::Pose2D::ConstPtr& head );
 		void roc4VelocityCallback(const geometry_msgs::Twist::ConstPtr& vel );
 		
-		void statesCallback(const roburoc4_state_estimator::States::ConstPtr& newStates);
+		void statesCallback(const roburoc4::States::ConstPtr& newStates);
 		
 		/* Function to update the window on new information */
 		void updateStatusWindow();
@@ -131,7 +131,7 @@ class MenuNode {
 		geometry_msgs::Twist gyroVel_;
 		geometry_msgs::Pose2D magHead_;
 		geometry_msgs::Twist roc4Vel_;
-		roburoc4_state_estimator::States states_;
+		roburoc4::States states_;
 
 		/* Menu things */
 		ITEM **my_items;
@@ -168,7 +168,7 @@ MenuNode::MenuNode() {
 		controlModeSub_ = nh_.subscribe<std_msgs::UInt8>("roburoc4_controllers/controlMode", 1 , &MenuNode::controlModeCallback, this);
 		stringPrintSub_ = nh_.subscribe<std_msgs::String>("roburoc4_printString", 1 , &MenuNode::stringPrintCallback, this);
 		
-		stateSub_ = nh_.subscribe<roburoc4_state_estimator::States>("roburoc4_state_estimator/states", 1 , &MenuNode::statesCallback, this);
+		stateSub_ = nh_.subscribe<roburoc4::States>("roburoc4_state_estimator/states", 1 , &MenuNode::statesCallback, this);
 		gpsPosSub_ = nh_.subscribe<sensor_msgs::NavSatFix>("GPS/position", 1, &MenuNode::gpsPositionCallback, this);
 		gpsVelSub_ = nh_.subscribe<geometry_msgs::Twist>("GPS/velocity", 1, &MenuNode::gpsVelocityCallback, this);
 		gpsHeadSub_ = nh_.subscribe<geometry_msgs::Pose2D>("GPS/orientation", 1, &MenuNode::gpsHeadingCallback, this);
@@ -586,7 +586,7 @@ void MenuNode::roc4VelocityCallback(const geometry_msgs::Twist::ConstPtr& vel ){
 }
 
 /* Callback to update the local copy of the states */
-void MenuNode::statesCallback(const roburoc4_state_estimator::States::ConstPtr& newStates){
+void MenuNode::statesCallback(const roburoc4::States::ConstPtr& newStates){
 	
 	/* Update the local copy of the states */
 	states_.x = newStates->x;
