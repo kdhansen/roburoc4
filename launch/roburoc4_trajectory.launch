@@ -1,0 +1,7 @@
+<launch>
+	<!-- SETUP OF THE NODES AND CONFIGURATIONS -->
+	
+	<!-- Helmsmann controller -->
+	<node name="roburoc4_trajectory_controller" pkg="roburoc4_controllers" type="roburoc4_trajectory_controller" />
+
+</launch>
