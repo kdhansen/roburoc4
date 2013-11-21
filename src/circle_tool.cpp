@@ -1,6 +1,6 @@
 // Circle publisher for the RobuROC4.
-// This is a tool to test the trajectory follower.
 //
+// This is a tool to test the trajectory follower.
 // This is a part of the ASETA project, Aalborg University.
 // 
 // Copyright 2013 Karl Damkjær Hansen
@@ -14,6 +14,9 @@
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <cstdio>
 #include <cmath>

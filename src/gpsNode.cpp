@@ -1,3 +1,23 @@
+// GPS driver for the RobuROC4.
+//
+// Interfaces to the GPS on the RobuROC4.
+// This is a part of the ASETA project, Aalborg University.
+// 
+// Copyright 2012 Rune Madsen
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as publishSegmented by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 #include <ros/ros.h>  				// Ros declerations
 #include <ros/console.h>			// DEBUG COMMANDS
 

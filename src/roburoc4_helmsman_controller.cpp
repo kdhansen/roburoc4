@@ -1,10 +1,25 @@
-/***********************************************************************
- * RobuROC4 trajectory controller.
- * Based on work of projectgroup 11gr731. Main idea is to follow a line defined by its two endpoints.
- * For more information about the controller principle refer to 
- * roburoc4_documentation/project_reports/11gr731_line_tracking_worksheets.pdf and
- * roburoc4_documentation/project_reports/11gr731_line_tracking_paper.pdf
- * ********************************************************************/
+// RobuROC4 trajectory controller.
+//
+// Based on work of projectgroup 11gr731. Main idea is to follow a line defined by its two endpoints.
+// For more information about the controller principle refer to 
+// roburoc4_documentation/project_reports/11gr731_line_tracking_worksheets.pdf and
+// roburoc4_documentation/project_reports/11gr731_line_tracking_paper.pdf
+// This is a part of the ASETA project, Aalborg University.
+// 
+// Copyright 2013 Karl Damkjær Hansen
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as publishSegmented by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* ROS things */
 #include <ros/ros.h>
