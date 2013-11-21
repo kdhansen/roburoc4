@@ -68,23 +68,28 @@ add_dependencies(roburoc4_state_estimator ${PROJECT_NAME}_gencpp)
 add_executable(roburoc4_trajectory_controller src/roburoc4_trajectory_controller.cpp)
 add_executable(roburoc4_helmsman_controller src/roburoc4_helmsman_controller.cpp)
 add_executable(roburoc4_trajectory_logger src/roburoc4_trajectory_logger.cpp)
-# Auxilary tools
-add_executable(circle_tool src/circle_tool.cpp)
-add_executable(open_loop_playback src/open_loop_playback.cpp)
-
 target_link_libraries(roburoc4_trajectory_controller ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 target_link_libraries(roburoc4_helmsman_controller ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 target_link_libraries(roburoc4_trajectory_logger ${catkin_LIBRARIES} ${Boost_LIBRARIES})
-target_link_libraries(circle_tool ${catkin_LIBRARIES} ${Boost_LIBRARIES})
-target_link_libraries(open_loop_playback ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 add_dependencies(roburoc4_trajectory_controller ${PROJECT_NAME}_gencpp)
 add_dependencies(roburoc4_trajectory_logger ${PROJECT_NAME}_gencpp)
 add_dependencies(roburoc4_helmsman_controller ${PROJECT_NAME}_gencpp)
+# Auxilary tools
+add_executable(circle_tool src/circle_tool.cpp)
+add_executable(open_loop_playback src/open_loop_playback.cpp)
+target_link_libraries(circle_tool ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+target_link_libraries(open_loop_playback ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 add_dependencies(circle_tool ${PROJECT_NAME}_gencpp)
 
 ### Menu ###
 add_executable(roburoc4_menu src/roburoc4_menu.cpp)
 target_link_libraries(roburoc4_menu ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${Curses_LIBRARIES})
+
+### Teleop ###
+add_executable(teleop_joy src/teleop_joy.cpp)
+add_executable(teleop_ps3_controller src/teleop_ps3_controller.cpp)
+target_link_libraries(teleop_joy ${catkin_LIBRARIES})
+target_link_libraries(teleop_ps3_controller ${catkin_LIBRARIES})
 
 ### Install ###
 install(DIRECTORY launch/
