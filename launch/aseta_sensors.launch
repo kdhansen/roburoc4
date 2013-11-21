@@ -2,17 +2,17 @@
 	<!-- SETUP OF THE NODES AND CONFIGURATIONS -->
 	
 	<!-- Magnetometer Node -->
-	<node name="MagnetometerNode" pkg="aseta_sensors" type="magnetometer_node" output="screen" />
+	<node name="MagnetometerNode" pkg="roburoc4" type="magnetometer_node" output="screen" />
 	<param name="/MagnetometerNode/serial_port_name" value="/dev/ttyUSB2" />
 	<param name="/MagnetometerNode/serial_port_baud" value="19200" />
 	
 	<!-- GPS Node -->
-	<node name="GPSNode" pkg="aseta_sensors" type="gps_node" output="screen" />
+	<node name="GPSNode" pkg="roburoc4" type="gps_node" output="screen" />
 	<param name="/GPSNode/serial_port_name" value="/dev/ttyUSB1" />
 	<param name="/GPSNode/serial_port_baud" value="115200" />
 
 	<!-- Gyro Node -->
-	<node name="GyroNode" pkg="aseta_sensors" type="gyro_node" output="screen" />
+	<node name="GyroNode" pkg="roburoc4" type="gyro_node" output="screen" />
 	<param name="/GyroNode/serial_port_name" value="/dev/ttyUSB0" />
 	<param name="/GyroNode/serial_port_baud" value="9600" />
 

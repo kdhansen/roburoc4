@@ -2,6 +2,6 @@
 	<!-- SETUP OF THE NODES AND CONFIGURATIONS -->
 	
 	<!-- State estimator -->
-	<node name="roburoc4_state_estimator" pkg="roburoc4_state_estimator" type="roburoc4_state_estimator" output="screen" />
+	<node name="roburoc4_state_estimator" pkg="roburoc4" type="roburoc4_state_estimator" output="screen" />
 
 </launch>

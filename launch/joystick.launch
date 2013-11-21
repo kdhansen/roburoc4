@@ -6,5 +6,5 @@
   <param name="/linearScale" value="0.5" />
   <param name="/angularScale" value="1" />
   <param name="/deadManButton" value="0" />
-  <node name="teleop_joy" pkg="kdh_teleop" type="teleop_joy" />
+  <node name="teleop_joy" pkg="roburoc4" type="teleop_joy" />
 </launch>

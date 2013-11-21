@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <launch>
 	
-	<include file="$(find roburoc4_driver)/launch/roburoc4_driver.launch" />
-	<include file="$(find aseta_sensors)/launch/aseta_sensors.launch" />
+	<include file="$(find roburoc4)/launch/roburoc4_driver.launch" />
+	<include file="$(find roburoc4)/launch/aseta_sensors.launch" />
 	
-	<include file="$(find roburoc4_controllers)/launch/roburoc4_helmsman.launch" />
-	<include file="$(find roburoc4_controllers)/launch/roburoc4_trajectory.launch" />
-	<include file="$(find roburoc4_controllers)/launch/roburoc4_trajectory_logger.launch" />
+	<include file="$(find roburoc4)/launch/roburoc4_helmsman.launch" />
+	<include file="$(find roburoc4)/launch/roburoc4_trajectory.launch" />
+	<include file="$(find roburoc4)/launch/roburoc4_trajectory_logger.launch" />
 	
-	<include file="$(find roburoc4_state_estimator)/launch/roburoc4_state_estimator.launch" />
+	<include file="$(find roburoc4)/launch/roburoc4_state_estimator.launch" />
 		
 </launch>
