@@ -64,16 +64,16 @@ RobuROC4Driver::RobuROC4Driver() {
 	
 	/* Setup the subscribers */
 	cmdVelSubscriber_ = nh_.subscribe<geometry_msgs::Twist>("cmd_vel", 1 , &RobuROC4Driver::cmdVelCallback, this);
-	requestPropertiesSubscriber_ = nh_.subscribe<std_msgs::Int32>("roburoc4/req_properties", 1, &RobuROC4Driver::requestPropertiesCallback, this);
-	requestDigitalOutputSubscriber_ = nh_.subscribe<std_msgs::UInt8>("roburoc4/set_digital_output",1,&RobuROC4Driver::setDigitalOutputCallback, this);
-	setCurPosSubscriber_ = nh_.subscribe<geometry_msgs::Pose2D>("roburoc4/set_cur_pos",1,&RobuROC4Driver::setCurrentPositionCallback, this);
+	requestPropertiesSubscriber_ = nh_.subscribe<std_msgs::Int32>("roburoc4_driver/req_properties", 1, &RobuROC4Driver::requestPropertiesCallback, this);
+	requestDigitalOutputSubscriber_ = nh_.subscribe<std_msgs::UInt8>("roburoc4_driver/set_digital_output",1,&RobuROC4Driver::setDigitalOutputCallback, this);
+	setCurPosSubscriber_ = nh_.subscribe<geometry_msgs::Pose2D>("roburoc4_driver/set_cur_pos",1,&RobuROC4Driver::setCurrentPositionCallback, this);
 	
 	/* Setup the publisher */
-	curVelPublisher_ = nh_.advertise<geometry_msgs::Twist>("roburoc4/cur_vel", 1);
-	curPosPublisher_ = nh_.advertise<geometry_msgs::Pose2D>("roburoc4/cur_pos", 1);
-	batInfoPublisher_ = nh_.advertise<roburoc4::battery>("roburoc4/battery_info", 1);
-	ioPublisher_ = nh_.advertise<roburoc4::io>("roburoc4/io", 1);
-	telemeterPublisher_ = nh_.advertise<roburoc4::telemeter>("roburoc4/telemeter", 1);
+	curVelPublisher_ = nh_.advertise<geometry_msgs::Twist>("roburoc4_driver/cur_vel", 1);
+	curPosPublisher_ = nh_.advertise<geometry_msgs::Pose2D>("roburoc4_driver/cur_pos", 1);
+	batInfoPublisher_ = nh_.advertise<roburoc4::battery>("roburoc4_driver/battery_info", 1);
+	ioPublisher_ = nh_.advertise<roburoc4::io>("roburoc4_driver/io", 1);
+	telemeterPublisher_ = nh_.advertise<roburoc4::telemeter>("roburoc4_driver/telemeter", 1);
 
 	/* Connect to the robot via a roburoc4Comm */
 	roburoc4Comm = new Roburoc4Comm(serverAddress, serverPort);	
