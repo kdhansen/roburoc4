@@ -55,7 +55,7 @@
 #define ACTIVE_TIME 20
 
 
-char *choices[] = {
+const char *choices[] = {
                         "--------- Controllers ---------",
 						"Controllers OFF                ",
 						"Helmsman    ON                 ",
@@ -238,7 +238,8 @@ MenuNode::MenuNode() {
 
         /* Print a border around the main window and print a title */
         box(my_menu_win, 0, 0);
-        print_in_middle(my_menu_win, 1, 0, 40, "RobuROC4 Menu", COLOR_PAIR(1));
+	char *menu_title = const_cast<char *>("RobuROC4 Menu");
+        print_in_middle(my_menu_win, 1, 0, 40, menu_title, COLOR_PAIR(1));
         mvwaddch(my_menu_win, 2, 0, ACS_LTEE);
         mvwhline(my_menu_win, 2, 1, ACS_HLINE, 38);
         mvwaddch(my_menu_win, 2, 39, ACS_RTEE);
@@ -246,7 +247,8 @@ MenuNode::MenuNode() {
                
         /* Print a box to contain all Status information from the robot */
         box(my_status_win, 0, 0);
-        print_in_middle(my_status_win, 1, 0, statusWindowWidth, "RobuROC4 Status", COLOR_PAIR(1));
+	char *status_title = const_cast<char *>("RobuROC4 Status");
+        print_in_middle(my_status_win, 1, 0, statusWindowWidth, status_title, COLOR_PAIR(1));
         mvwaddch(my_status_win, 2, 0, ACS_LTEE);
         mvwhline(my_status_win, 2, 1, ACS_HLINE, statusWindowWidth-2);
         mvwaddch(my_status_win, 2, statusWindowWidth-1, ACS_RTEE);   

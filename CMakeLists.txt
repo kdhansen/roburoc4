@@ -84,6 +84,7 @@ add_dependencies(circle_tool ${PROJECT_NAME}_gencpp)
 ### Menu ###
 add_executable(roburoc4_menu src/roburoc4_menu.cpp)
 target_link_libraries(roburoc4_menu ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${Curses_LIBRARIES})
+add_dependencies(roburoc4_menu ${PROJECT_NAME}_gencpp)
 
 ### Teleop ###
 add_executable(teleop_joy src/teleop_joy.cpp)
