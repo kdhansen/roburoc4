@@ -4,6 +4,8 @@ project(roburoc4)
 find_package(catkin REQUIRED roscpp message_generation geometry_msgs std_msgs sensor_msgs)
 find_package(Boost REQUIRED system filesystem serialization thread)
 find_package(Armadillo REQUIRED)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Modules/")
+find_package (GeographicLib 1.9 REQUIRED)
 
 add_message_files(
   DIRECTORY msg
@@ -13,7 +15,8 @@ add_message_files(
   TrajectoryPoints.msg
   battery.msg
   io.msg
-  telemeter.msg)
+  telemeter.msg
+  States.msg)
 
 generate_messages(DEPENDENCIES geometry_msgs)
 
@@ -27,7 +30,8 @@ include_directories(
   include 
   ${Boost_INCLUDE_DIRS} 
   ${catkin_INCLUDE_DIRS}
-  ${ARMADILLO_INCLUDE_DIRS})
+  ${ARMADILLO_INCLUDE_DIRS}
+  ${GeographicLib_INCLUDE_DIRS})
 
 ### Sensors ###
 add_executable(magnetometer_node src/magnetometerNode.cpp)
@@ -51,6 +55,10 @@ add_executable(roburoc4_driver_node
   src/pure_protocol/replace_telegram.cpp)
 target_link_libraries(roburoc4_driver_node ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 add_dependencies(roburoc4_driver_node ${PROJECT_NAME}_gencpp)
+
+### State Estimator ###
+add_executable(roburoc4_state_estimator src/roburoc4_state_estimator.cpp)
+target_link_libraries(roburoc4_state_estimator ${catkin_LIBRARIES} ${GeographicLib_LIBRARIES} ${ARMADILLO_LIBRARIES})
 
 # ### Controller related ###
 # # Controller nodes
