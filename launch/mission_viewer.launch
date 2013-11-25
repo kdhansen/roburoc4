@@ -1,0 +1,7 @@
+<launch>
+    <node name="mission_viewer" pkg="roburoc4" type="mission_viewer">
+        <remap from="cmd_segment" to="/roburoc4_controllers/lineSegment" />
+        <remap from="state_estimates" to="roburoc4_state_estimator/states" />
+        <remap from="control_mode" to="roburoc4_controllers/controlMode" />
+    </node>
+</launch>

@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import sys
+import rospy
+import mission_viewer
+
+if __name__ == '__main__':
+    m = mission_viewer.MissionViewer(sys.argv)
+    try:
+        m.run()
+    except rospy.ROSInterruptException:
+        pass

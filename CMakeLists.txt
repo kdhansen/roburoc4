@@ -8,6 +8,8 @@ find_package(Armadillo REQUIRED)
 find_package (GeographicLib 1.9 REQUIRED)
 find_package (Curses REQUIRED)
 
+catkin_python_setup()
+
 add_message_files(
   DIRECTORY msg
   FILES
@@ -21,10 +23,11 @@ add_message_files(
 
 generate_messages(DEPENDENCIES geometry_msgs)
 
+
 catkin_package(
  INCLUDE_DIRS include
  LIBRARIES ${PROJECT_NAME}
- CATKIN_DEPENDS roscpp message_runtime std_msgs sensor_msgs
+ CATKIN_DEPENDS roscpp rospy message_runtime std_msgs sensor_msgs
  DEPENDS)
 
 include_directories(
@@ -95,3 +98,6 @@ target_link_libraries(teleop_ps3_controller ${catkin_LIBRARIES})
 ### Install ###
 install(DIRECTORY launch/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch)
+
+install(PROGRAMS scripts/mission_viewer
+        DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
